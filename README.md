@@ -1,6 +1,6 @@
 # ghostscript-action
 
-This action gives you the possibility to execute a ghostscript command in your workflows.
+This action gives you the possibility to execute a [Ghostscript](https://www.ghostscript.com/) command in your workflows.
 
 ## Inputs
 
