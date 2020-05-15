@@ -1,0 +1,23 @@
+name: Test Action
+on: [push]
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Test Action
+        uses: ./ # Uses an action in the root directory
+        with:
+          file: '.github/workflows/main.pdf'
+          output: 'Lorem-ipsum.pdf'
+          arbitrary-parameters: '-dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer'
+      - name: Display diff
+        run: |
+          echo "Original size :"
+          du -h .github/workflows/main.pdf
+          echo "Modified size :"
+          du -h Lorem-ipsum.pdf

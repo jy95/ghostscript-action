@@ -1,5 +1,6 @@
 # action.yml
 name: 'ghostscript-action'
+author: jy95
 description: 'Github Actions to execute a ghostscript command'
 inputs:
   file:
@@ -19,3 +20,6 @@ runs:
     - ${{ inputs.file }}
     - ${{ inputs.output }}
     - ${{ inputs.arbitrary-parameters }}
+branding:
+  icon: hard-drive
+  color: red
