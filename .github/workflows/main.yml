@@ -9,15 +9,21 @@ jobs:
       # To use this repository's private action, you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Test Action
+      - name: Test Action (all inputs)
         uses: ./ # Uses an action in the root directory
         with:
           file: '.github/workflows/main.pdf'
           output: 'Lorem-ipsum.pdf'
           arbitrary-parameters: '-dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer'
+      - name: Test Action
+        uses: ./ # Uses an action in the root directory
+        with:
+          file: '.github/workflows/main.pdf'
       - name: Display diff
         run: |
           echo "Original size :"
           du -h .github/workflows/main.pdf
-          echo "Modified size :"
+          echo "Modified size (1) :"
           du -h Lorem-ipsum.pdf
+          echo "Modified size (2) :"
+          du -h compressed.pdf
