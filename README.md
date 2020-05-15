@@ -18,8 +18,8 @@ Extra arguments to be passed to Ghostscript (except sDEVICE, dNOPAUSE, dQUIET, d
 
 ## Example usage
 
-uses: jy95/ghostscript-action@v1
-with:
-  file: 'main.pdf'
-  output: 'main-compressed.pdf'
-  arbitrary-parameters: '-dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer'
+uses: jy95/ghostscript-action@v1  
+with:  
+  file: 'main.pdf'  
+  output: 'main-compressed.pdf'  
+  arbitrary-parameters: '-dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer'  
