@@ -1,0 +1,21 @@
+# action.yml
+name: 'ghostscript-action'
+description: 'Github Actions to execute a ghostscript command'
+inputs:
+  file:
+    description: 'The PDF file we want to compress'
+    required: true
+  output:
+    description: 'The name of the resulting PDF file'
+    required: false
+    default: 'compressed.pdf'
+  arbitrary-parameters:
+    description: 'Extra arguments to be passed to Ghostscript (except sDEVICE, dNOPAUSE, dQUIET, dBATCH and sOutputFile that cannot be set)'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file }}
+    - ${{ inputs.output }}
+    - ${{ inputs.arbitrary-parameters }}
